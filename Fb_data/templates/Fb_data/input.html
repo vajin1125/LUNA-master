@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+
+  <body>
+  
+  <div class="container-fluid">
+  	<div class="row">
+
+  		<div class="col"> <!-- column containing add uni -->
+  			<div class="card border-black text-center">
+  				<div class="card-header">
+  					ADD UNIVERSITY
+  				</div>
+  				<div class="card-body">
+  					<form action="{% url 'add_university' %}" method="post">
+  						{% csrf_token %}
+              {% for field in new_university_form %}
+  						{{ field.label }}
+              {{ field }}
+              <br>
+              {% endfor %}
+  						<input type="Submit">
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+
+
+  		<div class="col"> <!-- column containing add uni_SOC -->
+  			<div class="card border-black text-center">
+  				<div class="card-header">
+  					ADD UNIVERSITY SOCIETY
+  				</div>
+  				<div class="card-body">
+  					<form action="{% url 'add_university_society' %}" method="post">
+  						{% csrf_token %}
+              {% for field in new_uni_soc_form %}
+  						{{ field.label }}
+              {{ field }}
+              <br>
+              {% endfor %}
+  						<input type="Submit">
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+
+
+  		<div class="col"> <!-- column containing add event -->
+  			<div class="card border-black text-center">
+  				<div class="card-header">
+  					ADD EVENT
+  				</div>
+  				<div class="card-body">
+  					<form action="{% url 'add_event' %}" method="post">
+  						{% csrf_token %}
+  						{% for field in new_event_form %}
+              {{ field.label }}
+              {{ field }}
+              <br>
+              {% endfor %}
+  						<input type="Submit">
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="/static/home/js/home_page_modals.js"></script>
+  <script src="/static/home/js/job_view_modals.js"></script>
+  </body>
+</html>
